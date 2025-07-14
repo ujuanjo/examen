@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ejercicio1</title>
+    <link rel="stylesheet" type="text/css" href="static/css/estiloformularios.css">
+</head>
+<body>
+<div class="container">
+    <h1>Calculo de compras</h1>
+    <form action ="/calculodescuento" method="POST">
+        <label for="nombre">Ingresa tu nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br>
+        <label for="edad">Ingresa tu edad:</label>
+        <input type="number" id="edad" name="edad" required>
+        <br>
+        <label for="cantidadtarros">Ingrese la cantidad de tarros a comprar:</label>
+        <input type="number" id="cantidadtarros" name="cantidadtarros" required>
+        <br>
+        <button type="submit">Calcular</button>
+    </form>
+    {% if totalapagar %}
+    <div>
+        <p>Nombre del cliente: {{nombre}}</p>
+        <p>Total sin descuento: ${{9000*cantidadtarros}}</p>
+        <p>El descuento es de: ${{9000*cantidadtarros*descuento}}</p>
+        <p>Total a pagar es de: ${{totalapagar}}</p>
+    </div>
+   {% endif %}
+</div>
+</body>
+</html>
